@@ -34,7 +34,7 @@ class UserController extends Controller
 		$user->id_outlet 	= $request->id_outlet;
 		$user->nama 	    = $request->nama;
 		$user->username     = $request->username;
-		$user->role         = 'admin';
+		$user->role         = $request->role;
         // di api_pengaduan role setara dengan level, hanya beda nama
 		$user->password     = Hash::make($request->password);
 		$user->save();
@@ -46,7 +46,7 @@ class UserController extends Controller
         
         return response()->json([
             'success' => true,
-            'message' => 'Yeay, Kamu berhasil menambahkan pelanggan baru:D',
+            'message' => 'Yeay, Kamu berhasil menambahkan admin baru:D',
             'data'    => $data
         ]);
 	}
@@ -80,3 +80,4 @@ class UserController extends Controller
         ]);
 	}
 }
+

@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 
 // yang ditambahkan
-use JWTAuth;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Exception;
 use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
@@ -46,6 +46,7 @@ class JWTMiddleware
             'success' => 'false',
             'message' => 'You are unauthorize user',
         ]);
+       
     }
 }
 

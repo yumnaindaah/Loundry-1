@@ -1,5 +1,6 @@
 <?php
 
+// @yumnaindaah_
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,8 +13,8 @@ class PaketController extends Controller
     public function insert(Request $request)
     {
         $validator = Validator::make($request->all(), [
-			'jenis_paket' => 'required|string',
-            'harga_paket' => 'required|numeric'
+			'jenis' => 'required|string',
+            'harga' => 'required|numeric'
 		]);
 
         if($validator->fails()){
@@ -25,8 +26,8 @@ class PaketController extends Controller
 		}
 
 		$paket = new Paket();
-		$paket->jenis = $request->jenis_paket; 
-        $paket->harga = $request->harga_paket;
+		$paket->jenis = $request->jenis; 
+        $paket->harga = $request->harga;
         // nama kolom -> 
 		$paket->save();
 

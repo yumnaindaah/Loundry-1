@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+// @yumnaindaah_
 
 class CreateUsersTable extends Migration
 {
@@ -19,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nama');
             $table->string('username')->unique();
             $table->string('password');
-            $table->enum('role', ['admin','kasir','owner']);
+            $table->enum('role', ['admin']);
             $table->timestamps();
 
             $table->foreign('id_outlet')->references('id_outlet')->on('outlet')->onDelete('cascade');
